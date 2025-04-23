@@ -10,12 +10,21 @@ const formSchema = z.object({
 });
 
 // Initialize Resend with API key
+if (!process.env.RESEND_API_KEY) {
+  throw new Error('RESEND_API_KEY environment variable is not set. Please add it to your environment variables.');
+}
+
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: Request) {
   try {
     // Add debugging
-    console.log('RESEND_API_KEY exists:', !!process.env.RESEND_API_KEY);
+    if (!process.env.RESEND_API_KEY) {
+      return NextResponse.json(
+        { message: 'Server configuration error: Email service not configured' },
+        { status: 500 }
+      );
+    }
     
     // Parse request body
     const body = await request.json();
