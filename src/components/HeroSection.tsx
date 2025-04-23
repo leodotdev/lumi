@@ -1,7 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { IconBrandAppleFilled } from "@tabler/icons-react";
+import {
+  IconBrandAppleFilled,
+  IconPlayerPlayFilled,
+} from "@tabler/icons-react";
 import Script from "next/script";
 import ClientCursorEffect from "./ClientCursorEffect";
 import Image from "next/image";
@@ -88,20 +91,11 @@ export default function HeroSection() {
               aria-label="Lumiinus Product Demo Video"
             >
               <div className="text-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="w-16 h-16 mx-auto text-primary opacity-60"
-                  aria-hidden="true"
-                >
-                  <circle cx="12" cy="12" r="10" />
-                  <polygon points="10 8 16 12 10 16 10 8" />
-                </svg>
+                <IconPlayerPlayFilled
+                  className="mx-auto text-primary opacity-60"
+                  size={64}
+                  stroke={1.5}
+                />
                 <p className="mt-4 text-muted-foreground">Product Demo Video</p>
               </div>
             </div>
