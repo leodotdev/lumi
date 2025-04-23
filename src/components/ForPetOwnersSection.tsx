@@ -81,7 +81,7 @@ export default function ForPetOwnersSection() {
                 <span className="text-primary-foreground font-bold">1</span>
               </div>
               <h4 className="text-xl font-bold text-foreground">
-                Input Symptoms
+                Input symptoms
               </h4>
             </div>
             <p className="text-muted-foreground ml-12">
@@ -94,7 +94,7 @@ export default function ForPetOwnersSection() {
               <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center mr-4">
                 <span className="text-primary-foreground font-bold">2</span>
               </div>
-              <h4 className="text-xl font-bold text-foreground">Scan Stool</h4>
+              <h4 className="text-xl font-bold text-foreground">Scan stool</h4>
             </div>
             <p className="text-muted-foreground ml-12">
               Perform 3 scans on your pets stool from different angles
@@ -107,7 +107,7 @@ export default function ForPetOwnersSection() {
                 <span className="text-primary-foreground font-bold">3</span>
               </div>
               <h4 className="text-xl font-bold text-foreground">
-                Share with Vet
+                Share with vet
               </h4>
             </div>
             <p className="text-muted-foreground ml-12">
@@ -115,37 +115,6 @@ export default function ForPetOwnersSection() {
             </p>
           </div>
         </div>
-      </div>
-
-      <div id="contact" className="bg-card p-8 md:p-12 rounded-lg text-center">
-        <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
-          Contact Us
-        </h3>
-        <form className="max-w-xl mx-auto">
-          <div className="grid grid-cols-1 gap-6">
-            <input
-              type="text"
-              placeholder="Name"
-              className="px-4 py-3 rounded-lg bg-secondary text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-            />
-            <input
-              type="email"
-              placeholder="Email"
-              className="px-4 py-3 rounded-lg bg-secondary text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-            />
-            <textarea
-              placeholder="Message"
-              rows={5}
-              className="px-4 py-3 rounded-lg bg-secondary text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-            ></textarea>
-            <button
-              type="submit"
-              className="px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:opacity-90 transition-colors"
-            >
-              Submit
-            </button>
-          </div>
-        </form>
       </div>
     </div>
   );

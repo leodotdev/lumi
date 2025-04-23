@@ -5,6 +5,7 @@ import AboutUsSection from "@/components/AboutUsSection";
 import ForPetOwnersSection from "@/components/ForPetOwnersSection";
 import ForClinicsSection from "@/components/ForClinicsSection";
 import FaqSection from "@/components/FaqSection";
+import ContactSection from "@/components/ContactSection";
 import CallToAction from "@/components/CallToAction";
 import Footer from "@/components/Footer";
 
@@ -28,6 +29,9 @@ export default function Home() {
         </section>
         <section className="vr-section-inner">
           <FaqSection />
+        </section>
+        <section id="contact">
+          <ContactSection />
         </section>
         <CallToAction />
       </main>

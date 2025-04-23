@@ -46,10 +46,10 @@ export default function HeroSection() {
                 id="hero-heading"
                 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground vr-heading-spacing text-balance"
               >
-                Shine a light on your pet&apos;s health
+                Shine a light on your pet's health
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground mb-10 leading-relaxed text-balance">
-                Analyze your pet&apos;s stool for microscopic blood using your
+                Analyze your pet's stool for microscopic blood using your
                 smartphone.
               </p>
               <Link
