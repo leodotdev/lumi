@@ -1,7 +1,5 @@
 "use client";
 
-import Link from "next/link";
-
 export default function ForClinicsSection() {
   return (
     <div className="container mx-auto px-6 md:px-10 lg:px-16 py-20 bg-secondary/40">

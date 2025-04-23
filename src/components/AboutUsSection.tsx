@@ -8,7 +8,7 @@ export default function AboutUsSection() {
           About us
         </h2>
         <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-          Your pet's health is our top priority
+          Your pet&apos;s health is our top priority
         </p>
       </div>
 

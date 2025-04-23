@@ -1,4 +1,4 @@
-import Image from "next/image";
+// import Image from "next/image";
 
 const problems = [
   {
@@ -38,13 +38,13 @@ const problems = [
   },
 ];
 
-// Sample phone screenshots - in real app, we would use actual image paths
-const phoneScreens = {
-  fee: "https://images.unsplash.com/photo-1622433172102-85d9eb911b77",
-  artists: "https://images.unsplash.com/photo-1472457974886-0ebcd59440cc",
-  transfer: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7",
-  navigation: "https://images.unsplash.com/photo-1604782206219-3b9576575203",
-};
+// Sample phone screenshots - currently not used
+// const phoneScreens = {
+//   fee: "https://images.unsplash.com/photo-1622433172102-85d9eb911b77",
+//   artists: "https://images.unsplash.com/photo-1472457974886-0ebcd59440cc",
+//   transfer: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7",
+//   navigation: "https://images.unsplash.com/photo-1604782206219-3b9576575203",
+// };
 
 export default function SimpleProblemsSection() {
   return (
