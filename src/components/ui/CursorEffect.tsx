@@ -23,14 +23,19 @@ export function CursorEffect({
   zIndex = 0,
   containerId,
 }: CursorEffectProps) {
+  // Initialize with empty arrays and default values to avoid hydration mismatches
   const [particles, setParticles] = useState<
     { x: number; y: number; delay: number }[]
   >([]);
   const [isVisible, setIsVisible] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [scrollOpacity, setScrollOpacity] = useState(1);
+  const [isClient, setIsClient] = useState(false);
 
+  // Handle initialization after component mounts on client
   useEffect(() => {
+    setIsClient(true);
+
     // Initialize particles with different follow delays
     const initialParticles = Array.from({ length: particleCount }, (_, i) => ({
       x: 0,
@@ -40,17 +45,18 @@ export function CursorEffect({
     setParticles(initialParticles);
 
     // Set initial position to center of the screen
-    if (typeof window !== "undefined") {
-      const initialX = window.innerWidth / 2;
-      const initialY = window.innerHeight / 2;
-      setMousePosition({ x: initialX, y: initialY });
-      setParticles(
-        initialParticles.map((p) => ({ ...p, x: initialX, y: initialY }))
-      );
-    }
+    const initialX = window.innerWidth / 2;
+    const initialY = window.innerHeight / 2;
+    setMousePosition({ x: initialX, y: initialY });
+    setParticles(
+      initialParticles.map((p) => ({ ...p, x: initialX, y: initialY }))
+    );
   }, [particleCount]);
 
+  // Handle mouse and scroll events
   useEffect(() => {
+    if (!isClient) return;
+
     let animationFrameId: number;
 
     const handleMouseMove = (e: MouseEvent) => {
@@ -84,7 +90,6 @@ export function CursorEffect({
         const container = document.getElementById(containerId);
         if (container) {
           const rect = container.getBoundingClientRect();
-          const heroHeight = rect.height;
           const viewportBottom = window.innerHeight;
 
           const heroVisiblePercent = Math.max(
@@ -129,10 +134,11 @@ export function CursorEffect({
       window.removeEventListener("scroll", handleScroll);
       cancelAnimationFrame(animationFrameId);
     };
-  }, [isVisible, mousePosition, containerId]);
+  }, [isVisible, mousePosition, containerId, isClient]);
 
-  if (typeof window === "undefined") {
-    return null; // Don't render on server
+  // Don't render anything on the server or before client-side hydration
+  if (!isClient) {
+    return null;
   }
 
   const finalOpacity = opacity * scrollOpacity;
