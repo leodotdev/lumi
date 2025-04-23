@@ -45,14 +45,13 @@ export default function HeroSection() {
             <div className="text-left vr-content">
               <div className="flex items-center mb-6">
                 <Image
-                  src="/images/logo.svg"
+                  src="/images/logo_white.png"
                   alt="Lumiinus Logo"
-                  width={80}
-                  height={80}
-                  className="mr-3"
+                  width={220}
+                  height={70}
+                  className="w-auto h-16"
                   priority
                 />
-                <h2 className="text-3xl font-bold text-primary">Lumiinus</h2>
               </div>
               <h1
                 id="hero-heading"
@@ -100,11 +99,11 @@ export default function HeroSection() {
             >
               <div className="text-center">
                 <Image
-                  src="/images/logo.svg"
+                  src="/images/logo_white.png"
                   alt="Lumiinus Logo"
-                  width={200}
-                  height={200}
-                  className="mx-auto mb-4"
+                  width={300}
+                  height={100}
+                  className="mx-auto mb-4 w-auto h-28"
                   priority
                 />
                 <svg

@@ -17,13 +17,13 @@ export default function Header() {
     <header className="w-full py-6 px-6 md:px-10 lg:px-16 flex items-center justify-between sticky top-0 bg-background/90 backdrop-blur-sm z-50 border-b border-border">
       <Link href="/" className="flex items-center">
         <Image
-          src="/images/logo.svg"
+          src="/images/logo_white.png"
           alt="Lumiinus Logo"
-          width={40}
+          width={120}
           height={40}
-          className="mr-2"
+          className="h-10 w-auto"
+          priority
         />
-        <span className="text-2xl font-bold text-primary">Lumiinus</span>
       </Link>
 
       <nav className="hidden md:flex items-center space-x-8">

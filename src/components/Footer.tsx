@@ -25,7 +25,7 @@ export default function Footer() {
             "@type": "Organization",
             "name": "Lumiinus",
             "url": "https://lumiinus.com",
-            "logo": "https://lumiinus.com/images/logo.svg",
+            "logo": "https://lumiinus.com/images/logo_white.png",
             "description": "Lumiinus provides pet health blood detection technology through a mobile app that analyzes pet stool for microscopic blood using smartphone cameras.",
             "foundingDate": "2022",
             "address": {
@@ -56,15 +56,12 @@ export default function Footer() {
                 aria-label="Lumiinus Home"
               >
                 <Image
-                  src="/images/logo.svg"
+                  src="/images/logo_white.png"
                   alt="Lumiinus Logo"
-                  width={40}
-                  height={40}
-                  className="mr-2"
+                  width={140}
+                  height={45}
+                  className="h-12 w-auto"
                 />
-                <span className="text-2xl font-bold text-primary">
-                  Lumiinus
-                </span>
               </Link>
             </div>
 

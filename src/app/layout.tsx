@@ -63,7 +63,7 @@ export default function RootLayout({
         />
         <link rel="canonical" href="https://lumiinus.com" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/images/logo.svg" />
+        <link rel="apple-touch-icon" href="/images/logo_white.png" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
