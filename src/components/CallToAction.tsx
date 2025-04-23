@@ -5,9 +5,9 @@ import { IconBrandAppleFilled } from "@tabler/icons-react";
 
 export default function CallToAction() {
   return (
-    <section className="w-full py-16 bg-zinc-900">
-      <div className="container mx-auto px-6 md:px-10 lg:px-16 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+    <section className="w-full vr-section bg-zinc-900">
+      <div className="container mx-auto px-6 md:px-10 lg:px-16 text-center vr-content">
+        <h2 className="text-3xl md:text-4xl font-bold text-foreground vr-heading-spacing">
           Why scoop, when you can snap?
         </h2>
         <p className="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto">

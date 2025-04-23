@@ -10,7 +10,7 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen vr-base">
       <Header />
       <main className="flex-1">
         <HeroSection />
@@ -20,13 +20,15 @@ export default function Home() {
         <section id="about-us">
           <AboutUsSection />
         </section>
-        <section id="for-pet-owners">
+        <section id="for-pet-owners" className="vr-section-inner">
           <ForPetOwnersSection />
         </section>
-        <section id="for-clinics">
+        <section id="for-clinics" className="vr-section-inner">
           <ForClinicsSection />
         </section>
-        <FaqSection />
+        <section className="vr-section-inner">
+          <FaqSection />
+        </section>
         <CallToAction />
       </main>
       <Footer />

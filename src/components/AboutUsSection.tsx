@@ -69,8 +69,8 @@ export default function AboutUsSection() {
   ];
 
   return (
-    <div className="container mx-auto px-6 md:px-10 lg:px-16 py-20 bg-background">
-      <div className="text-center mb-16">
+    <div className="container mx-auto px-6 md:px-10 lg:px-16 vr-section bg-background">
+      <div className="text-center vr-heading-spacing">
         <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
           About us
         </h2>
@@ -79,9 +79,12 @@ export default function AboutUsSection() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 vr-grid">
         {teamMembers.map((member, index) => (
-          <div key={index} className="bg-card p-6 rounded-lg text-center">
+          <div
+            key={index}
+            className="bg-card p-6 rounded-lg text-center vr-card-content"
+          >
             <div className="w-32 h-32 rounded-full mx-auto mb-4 overflow-hidden">
               <Image
                 src={member.imagePath}

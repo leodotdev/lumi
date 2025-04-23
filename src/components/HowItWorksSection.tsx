@@ -1,7 +1,7 @@
 export default function HowItWorksSection() {
   return (
-    <div className="container mx-auto px-6 md:px-10 lg:px-16 py-20">
-      <div className="text-center mb-16">
+    <div className="container mx-auto px-6 md:px-10 lg:px-16 vr-section">
+      <div className="text-center vr-heading-spacing">
         <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
           How it works
         </h2>
@@ -15,8 +15,8 @@ export default function HowItWorksSection() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-        <div className="bg-card p-8 rounded-lg shadow-md">
+      <div className="grid grid-cols-1 md:grid-cols-3 vr-grid">
+        <div className="bg-card p-8 rounded-lg shadow-md vr-card-content">
           <div className="bg-secondary rounded-full w-12 h-12 flex items-center justify-center mb-6">
             <span className="text-primary font-bold">1</span>
           </div>
@@ -33,7 +33,7 @@ export default function HowItWorksSection() {
           </p>
         </div>
 
-        <div className="bg-card p-8 rounded-lg shadow-md">
+        <div className="bg-card p-8 rounded-lg shadow-md vr-card-content">
           <div className="bg-secondary rounded-full w-12 h-12 flex items-center justify-center mb-6">
             <span className="text-primary font-bold">2</span>
           </div>
@@ -48,7 +48,7 @@ export default function HowItWorksSection() {
           </p>
         </div>
 
-        <div className="bg-card p-8 rounded-lg shadow-md">
+        <div className="bg-card p-8 rounded-lg shadow-md vr-card-content">
           <div className="bg-secondary rounded-full w-12 h-12 flex items-center justify-center mb-6">
             <span className="text-primary font-bold">3</span>
           </div>

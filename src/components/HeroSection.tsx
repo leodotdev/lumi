@@ -3,11 +3,11 @@ import { IconBrandAppleFilled } from "@tabler/icons-react";
 
 export default function HeroSection() {
   return (
-    <section className="w-full py-20 md:py-32 bg-background">
+    <section className="vr-section bg-background">
       <div className="container mx-auto px-6 md:px-10 lg:px-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-          <div className="text-left">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 text-balance">
+          <div className="text-left vr-content">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground vr-heading-spacing text-balance">
               Shine a light on your pet's health
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-10 leading-relaxed text-balance">
@@ -58,9 +58,9 @@ export default function HeroSection() {
         </div>
       </div>
 
-      <div className="container mx-auto px-6 md:px-10 lg:px-16 mt-16">
-        <div className="text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4 text-balance">
+      <div className="container mx-auto px-6 md:px-10 lg:px-16 mt-16 md:mt-24">
+        <div className="text-center vr-text-blocks">
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground vr-heading-spacing text-balance">
             Unleash the power of Lumiinus
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto text-balance">
@@ -68,8 +68,8 @@ export default function HeroSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="bg-card p-6 rounded-lg text-center">
+        <div className="grid grid-cols-1 md:grid-cols-3 vr-grid">
+          <div className="bg-card p-6 rounded-lg text-center vr-card-content">
             <h3 className="text-xl font-bold text-foreground mb-4">
               Detect trace amounts of blood
             </h3>
@@ -78,7 +78,7 @@ export default function HeroSection() {
               issues.
             </p>
           </div>
-          <div className="bg-card p-6 rounded-lg text-center">
+          <div className="bg-card p-6 rounded-lg text-center vr-card-content">
             <h3 className="text-xl font-bold text-foreground mb-4">
               Catch health issues early on
             </h3>
@@ -87,7 +87,7 @@ export default function HeroSection() {
               longer life
             </p>
           </div>
-          <div className="bg-card p-6 rounded-lg text-center">
+          <div className="bg-card p-6 rounded-lg text-center vr-card-content">
             <h3 className="text-xl font-bold text-foreground mb-4">
               Clinically validated
             </h3>
@@ -97,7 +97,7 @@ export default function HeroSection() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 vr-grid mt-12">
           <div className="bg-card p-6 rounded-lg text-center">
             <h3 className="text-3xl font-bold text-foreground mb-2">96%</h3>
             <p className="text-muted-foreground text-lg">Sensitivity</p>
