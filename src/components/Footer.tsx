@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { scrollToElement } from "@/utils/scroll";
 import Script from "next/script";
+import Image from "next/image";
 
 export default function Footer() {
   const handleNavClick = (
@@ -24,7 +25,7 @@ export default function Footer() {
             "@type": "Organization",
             "name": "Lumiinus",
             "url": "https://lumiinus.com",
-            "logo": "https://lumiinus.com/logo.png",
+            "logo": "https://lumiinus.com/images/logo.svg",
             "description": "Lumiinus provides pet health blood detection technology through a mobile app that analyzes pet stool for microscopic blood using smartphone cameras.",
             "foundingDate": "2022",
             "address": {
@@ -51,10 +52,19 @@ export default function Footer() {
             <div className="mb-6 md:mb-0">
               <Link
                 href="/"
-                className="text-2xl font-bold text-primary"
+                className="flex items-center"
                 aria-label="Lumiinus Home"
               >
-                Lumiinus
+                <Image
+                  src="/images/logo.svg"
+                  alt="Lumiinus Logo"
+                  width={40}
+                  height={40}
+                  className="mr-2"
+                />
+                <span className="text-2xl font-bold text-primary">
+                  Lumiinus
+                </span>
               </Link>
             </div>
 

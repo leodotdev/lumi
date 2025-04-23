@@ -1,0 +1,12 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(400, 300)">
+    <!-- Left circle (green) -->
+    <circle cx="-100" cy="0" r="200" fill="#26a69a" opacity="0.8" />
+    
+    <!-- Right circle (blue) -->
+    <circle cx="100" cy="0" r="200" fill="#00b0ff" opacity="0.8" />
+    
+    <!-- Overlay for the intersection to make it darker -->
+    <circle cx="0" cy="0" r="120" fill="#003c8f" opacity="0.9" />
+  </g>
+</svg> 

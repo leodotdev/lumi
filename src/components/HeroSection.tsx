@@ -4,6 +4,7 @@ import Link from "next/link";
 import { IconBrandAppleFilled } from "@tabler/icons-react";
 import Script from "next/script";
 import ClientCursorEffect from "./ClientCursorEffect";
+import Image from "next/image";
 
 export default function HeroSection() {
   return (
@@ -42,6 +43,17 @@ export default function HeroSection() {
         <div className="container mx-auto px-6 md:px-10 lg:px-16 relative z-10 py-16 md:py-20">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
             <div className="text-left vr-content">
+              <div className="flex items-center mb-6">
+                <Image
+                  src="/images/logo.svg"
+                  alt="Lumiinus Logo"
+                  width={80}
+                  height={80}
+                  className="mr-3"
+                  priority
+                />
+                <h2 className="text-3xl font-bold text-primary">Lumiinus</h2>
+              </div>
               <h1
                 id="hero-heading"
                 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground vr-heading-spacing text-balance"
@@ -82,11 +94,19 @@ export default function HeroSection() {
             </div>
 
             <div
-              className="aspect-video bg-card rounded-lg flex items-center justify-center border border-border overflow-hidden"
+              className="aspect-video bg-card border border-border rounded-lg flex items-center justify-center border border-border overflow-hidden"
               role="img"
               aria-label="Lumiinus Product Demo Video"
             >
               <div className="text-center">
+                <Image
+                  src="/images/logo.svg"
+                  alt="Lumiinus Logo"
+                  width={200}
+                  height={200}
+                  className="mx-auto mb-4"
+                  priority
+                />
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -124,7 +144,7 @@ export default function HeroSection() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 vr-grid gap-6">
-            <article className="bg-card p-6 rounded-lg text-center vr-card-content">
+            <article className="bg-card border border-border p-6 rounded-lg text-center vr-card-content">
               <h3 className="text-xl font-bold text-foreground mb-4">
                 Detect trace amounts of blood
               </h3>
@@ -133,7 +153,7 @@ export default function HeroSection() {
                 health issues.
               </p>
             </article>
-            <article className="bg-card p-6 rounded-lg text-center vr-card-content">
+            <article className="bg-card border border-border p-6 rounded-lg text-center vr-card-content">
               <h3 className="text-xl font-bold text-foreground mb-4">
                 Catch health issues early on
               </h3>
@@ -142,7 +162,7 @@ export default function HeroSection() {
                 longer life.
               </p>
             </article>
-            <article className="bg-card p-6 rounded-lg text-center vr-card-content">
+            <article className="bg-card border border-border p-6 rounded-lg text-center vr-card-content">
               <h3 className="text-xl font-bold text-foreground mb-4">
                 Clinically validated
               </h3>
@@ -153,15 +173,15 @@ export default function HeroSection() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 vr-grid mt-12 gap-6">
-            <div className="bg-card p-6 rounded-lg text-center">
+            <div className="bg-card border border-border p-6 rounded-lg text-center">
               <h3 className="text-3xl font-bold text-foreground mb-2">96%</h3>
               <p className="text-muted-foreground text-lg">Sensitivity</p>
             </div>
-            <div className="bg-card p-6 rounded-lg text-center">
+            <div className="bg-card border border-border p-6 rounded-lg text-center">
               <h3 className="text-3xl font-bold text-foreground mb-2">92%</h3>
               <p className="text-muted-foreground text-lg">Specificity</p>
             </div>
-            <div className="bg-card p-6 rounded-lg text-center">
+            <div className="bg-card border border-border p-6 rounded-lg text-center">
               <h3 className="text-3xl font-bold text-foreground mb-2">
                 1,000+
               </h3>
