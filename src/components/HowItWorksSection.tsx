@@ -16,7 +16,7 @@ export default function HowItWorksSection() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-        <div className="bg-card p-8 rounded-lg shadow-md border border-border">
+        <div className="bg-card p-8 rounded-lg shadow-md">
           <div className="bg-secondary rounded-full w-12 h-12 flex items-center justify-center mb-6">
             <span className="text-primary font-bold">1</span>
           </div>
@@ -33,7 +33,7 @@ export default function HowItWorksSection() {
           </p>
         </div>
 
-        <div className="bg-card p-8 rounded-lg shadow-md border border-border">
+        <div className="bg-card p-8 rounded-lg shadow-md">
           <div className="bg-secondary rounded-full w-12 h-12 flex items-center justify-center mb-6">
             <span className="text-primary font-bold">2</span>
           </div>
@@ -48,7 +48,7 @@ export default function HowItWorksSection() {
           </p>
         </div>
 
-        <div className="bg-card p-8 rounded-lg shadow-md border border-border">
+        <div className="bg-card p-8 rounded-lg shadow-md">
           <div className="bg-secondary rounded-full w-12 h-12 flex items-center justify-center mb-6">
             <span className="text-primary font-bold">3</span>
           </div>

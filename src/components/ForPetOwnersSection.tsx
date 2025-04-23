@@ -2,7 +2,7 @@
 
 export default function ForPetOwnersSection() {
   return (
-    <div className="container mx-auto px-6 md:px-10 lg:px-16 py-20">
+    <div className="container mx-auto px-6 md:px-10 lg:px-16 py-20 bg-background">
       <div className="text-center mb-16">
         <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
           For pet owners
@@ -70,7 +70,7 @@ export default function ForPetOwnersSection() {
           </div>
         </div>
 
-        <div className="bg-secondary/40 p-8 rounded-lg shadow-md">
+        <div className="bg-card p-8 rounded-lg">
           <h3 className="text-2xl font-bold text-foreground mb-6">
             3 Easy Steps
           </h3>
@@ -117,10 +117,7 @@ export default function ForPetOwnersSection() {
         </div>
       </div>
 
-      <div
-        id="contact"
-        className="bg-secondary/70 p-8 md:p-12 rounded-lg shadow-md text-center"
-      >
+      <div id="contact" className="bg-card p-8 md:p-12 rounded-lg text-center">
         <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
           Contact Us
         </h3>
@@ -129,17 +126,17 @@ export default function ForPetOwnersSection() {
             <input
               type="text"
               placeholder="Name"
-              className="px-4 py-3 rounded-lg border border-border bg-card text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+              className="px-4 py-3 rounded-lg bg-secondary text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
             />
             <input
               type="email"
               placeholder="Email"
-              className="px-4 py-3 rounded-lg border border-border bg-card text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+              className="px-4 py-3 rounded-lg bg-secondary text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
             />
             <textarea
               placeholder="Message"
               rows={5}
-              className="px-4 py-3 rounded-lg border border-border bg-card text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+              className="px-4 py-3 rounded-lg bg-secondary text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
             ></textarea>
             <button
               type="submit"

@@ -1,23 +1,25 @@
 "use client";
 
 import Link from "next/link";
+import { IconBrandAppleFilled } from "@tabler/icons-react";
 
 export default function CallToAction() {
   return (
-    <section className="w-full py-16 bg-primary">
+    <section className="w-full py-16 bg-zinc-900">
       <div className="container mx-auto px-6 md:px-10 lg:px-16 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-6">
+        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
           Why scoop, when you can snap?
         </h2>
-        <p className="text-xl text-primary-foreground/80 mb-12 max-w-3xl mx-auto">
+        <p className="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto">
           Scan in seconds and share results with your vet.
         </p>
         <Link
           href="https://apps.apple.com/app/lumiinus/id1234567890"
-          className="inline-flex items-center px-8 py-4 bg-secondary text-secondary-foreground rounded-full font-medium text-lg hover:opacity-90 transition-colors"
+          className="inline-flex items-center px-8 py-4 bg-primary text-primary-foreground rounded-full font-medium text-lg hover:opacity-90 transition-colors"
           target="_blank"
           rel="noopener noreferrer"
         >
+          <IconBrandAppleFilled className="mr-2" size={24} />
           Download on iOS
           <svg
             className="ml-2 w-6 h-6"

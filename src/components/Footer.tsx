@@ -13,7 +13,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="w-full py-12 bg-secondary/60">
+    <footer className="w-full py-12 bg-background">
       <div className="container mx-auto px-6 md:px-10 lg:px-16">
         <div className="flex flex-col md:flex-row justify-between items-center mb-8">
           <div className="mb-6 md:mb-0">
