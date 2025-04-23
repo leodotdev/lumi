@@ -1,7 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import { IconBrandAppleFilled } from "@tabler/icons-react";
-import { CursorEffect } from "./ui/CursorEffect";
 import Script from "next/script";
+import ClientCursorEffect from "./ClientCursorEffect";
 
 export default function HeroSection() {
   return (
@@ -30,18 +32,12 @@ export default function HeroSection() {
       </Script>
 
       <section
+        id="hero-section"
         className="vr-section bg-background relative overflow-hidden min-h-screen flex flex-col justify-center"
         aria-labelledby="hero-heading"
       >
         {/* Cursor Effect */}
-        <CursorEffect
-          colors={["92, 0, 255", "0, 92, 255", "255, 0, 255"]}
-          sizes={[400, 300, 250]}
-          blur={60}
-          opacity={0.4}
-          particleCount={7}
-          zIndex={1}
-        />
+        <ClientCursorEffect containerId="hero-section" />
 
         <div className="container mx-auto px-6 md:px-10 lg:px-16 relative z-10 py-16 md:py-20">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">

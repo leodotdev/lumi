@@ -10,6 +10,7 @@ interface CursorEffectProps {
   className?: string;
   particleCount?: number;
   zIndex?: number;
+  containerId?: string;
 }
 
 export function CursorEffect({
@@ -20,12 +21,14 @@ export function CursorEffect({
   className = "",
   particleCount = 5,
   zIndex = 0,
+  containerId,
 }: CursorEffectProps) {
   const [particles, setParticles] = useState<
     { x: number; y: number; delay: number }[]
   >([]);
   const [isVisible, setIsVisible] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [scrollOpacity, setScrollOpacity] = useState(1);
 
   useEffect(() => {
     // Initialize particles with different follow delays
@@ -52,11 +55,46 @@ export function CursorEffect({
 
     const handleMouseMove = (e: MouseEvent) => {
       if (!isVisible) setIsVisible(true);
+
+      if (containerId) {
+        const container = document.getElementById(containerId);
+        if (container) {
+          const rect = container.getBoundingClientRect();
+          const isInside =
+            e.clientX >= rect.left &&
+            e.clientX <= rect.right &&
+            e.clientY >= rect.top &&
+            e.clientY <= rect.bottom;
+
+          if (!isInside) {
+            return;
+          }
+        }
+      }
+
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
 
     const handleMouseLeave = () => {
       setIsVisible(false);
+    };
+
+    const handleScroll = () => {
+      if (containerId) {
+        const container = document.getElementById(containerId);
+        if (container) {
+          const rect = container.getBoundingClientRect();
+          const heroHeight = rect.height;
+          const viewportBottom = window.innerHeight;
+
+          const heroVisiblePercent = Math.max(
+            0,
+            Math.min(1, rect.bottom / viewportBottom)
+          );
+
+          setScrollOpacity(heroVisiblePercent);
+        }
+      }
     };
 
     const animateParticles = () => {
@@ -79,18 +117,25 @@ export function CursorEffect({
     // Add event listeners to window
     window.addEventListener("mousemove", handleMouseMove);
     document.addEventListener("mouseleave", handleMouseLeave);
+    window.addEventListener("scroll", handleScroll);
+
+    // Initial scroll calculation
+    handleScroll();
 
     // Cleanup
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
       document.removeEventListener("mouseleave", handleMouseLeave);
+      window.removeEventListener("scroll", handleScroll);
       cancelAnimationFrame(animationFrameId);
     };
-  }, [isVisible, mousePosition]);
+  }, [isVisible, mousePosition, containerId]);
 
   if (typeof window === "undefined") {
     return null; // Don't render on server
   }
+
+  const finalOpacity = opacity * scrollOpacity;
 
   return (
     <div
@@ -111,7 +156,7 @@ export function CursorEffect({
               top: `${particle.y}px`,
               width: `${sizes[sizeIndex]}px`,
               height: `${sizes[sizeIndex]}px`,
-              opacity: isVisible ? opacity : 0,
+              opacity: isVisible ? finalOpacity : 0,
               transform: `translate(-50%, -50%)`,
               background: `radial-gradient(circle, rgba(${colors[colorIndex]}, 0.7) 0%, rgba(${colors[colorIndex]}, 0) 70%)`,
               filter: `blur(${blur}px)`,
