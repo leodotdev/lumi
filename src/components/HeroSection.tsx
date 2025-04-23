@@ -43,16 +43,6 @@ export default function HeroSection() {
         <div className="container mx-auto px-6 md:px-10 lg:px-16 relative z-10 py-16 md:py-20">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
             <div className="text-left vr-content">
-              <div className="flex items-center mb-6">
-                <Image
-                  src="/images/logo_white.png"
-                  alt="Lumiinus Logo"
-                  width={220}
-                  height={70}
-                  className="w-auto h-16"
-                  priority
-                />
-              </div>
               <h1
                 id="hero-heading"
                 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground vr-heading-spacing text-balance"
@@ -98,14 +88,6 @@ export default function HeroSection() {
               aria-label="Lumiinus Product Demo Video"
             >
               <div className="text-center">
-                <Image
-                  src="/images/logo_white.png"
-                  alt="Lumiinus Logo"
-                  width={300}
-                  height={100}
-                  className="mx-auto mb-4 w-auto h-28"
-                  priority
-                />
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
