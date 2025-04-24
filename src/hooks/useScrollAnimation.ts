@@ -29,6 +29,7 @@ export function useScrollAnimation({
 }: ScrollAnimationProps = {}): [RefObject<HTMLElement | null>, MotionValue<number>] {
   const ref = useRef<HTMLElement>(null);
   const animationState = useAnimation() as unknown as AnimationState;
+  const staticValue = useMotionValue(outputRange[0]);
 
   // Always calculate scroll progress, even if we won't use it
   const { scrollYProgress } = useScroll({
@@ -50,7 +51,7 @@ export function useScrollAnimation({
   // If animations are disabled or user prefers reduced motion,
   // return a static value
   if (!animationState.enableAnimations || animationState.prefersReducedMotion) {
-    return [ref, useMotionValue(outputRange[0])];
+    return [ref, staticValue];
   }
 
   // Apply smoothing if requested
