@@ -76,7 +76,7 @@ export default function AboutUsSection() {
       <div className="text-center vr-heading-spacing">
         <ScrollReveal>
           <TextReveal
-            text="Aboutus"
+            text="About us"
             as="h2"
             className="text-3xl md:text-4xl font-bold text-foreground mb-4"
             splitBy="words"

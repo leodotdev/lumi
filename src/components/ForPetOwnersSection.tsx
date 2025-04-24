@@ -20,7 +20,7 @@ export default function ForPetOwnersSection() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-20">
         <div>
           <h3 className="text-2xl font-bold text-foreground mb-4">
-            Blood in Stool is a Problem
+            Blood in Stool Is a Problem
           </h3>
           <p className="text-muted-foreground mb-6">
             Blood in your pet's stool can be an early sign of hidden health

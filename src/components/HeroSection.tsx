@@ -51,10 +51,10 @@ export default function HeroSection() {
             <div className="text-left vr-content">
               <ScrollReveal>
                 <TextReveal
-                  text="Shine a light on your pet's health"
+                  text="Shine A Light On Your Pet's Health"
                   as="h1"
                   id="hero-heading"
-                  className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground vr-heading-spacing text-balance"
+                  className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground vr-heading-spacing text-balance tracking-normal"
                   splitBy="words"
                   staggerAmount={0.05}
                 />

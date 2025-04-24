@@ -50,7 +50,7 @@ export default function TextReveal({
   // Split the text into items (words or characters)
   const items =
     splitBy === "words"
-      ? text.split(" ").map((word) => word + " ")
+      ? text.split(/\s+/).filter(Boolean) // Split by any whitespace and remove empty strings
       : text.split("");
 
   // Container variants
@@ -99,6 +99,10 @@ export default function TextReveal({
             style={{
               display: splitBy === "words" ? "inline-block" : "inline",
               whiteSpace: splitBy === "characters" ? "pre" : "normal",
+              marginRight:
+                splitBy === "words" && index < items.length - 1
+                  ? "0.25em"
+                  : undefined,
             }}
           >
             {textItem}
