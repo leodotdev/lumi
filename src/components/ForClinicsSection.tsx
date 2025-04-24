@@ -1,5 +1,14 @@
 "use client";
 
+import {
+  IconTestPipe,
+  IconMicroscope,
+  IconRepeat,
+  IconEye,
+  IconMailFast,
+  IconStethoscope,
+} from "@tabler/icons-react";
+
 export default function ForClinicsSection() {
   return (
     <div className="container mx-auto px-6 md:px-10 lg:px-16 py-20 bg-background">
@@ -17,6 +26,9 @@ export default function ForClinicsSection() {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div className="bg-card border border-border p-6 rounded-lg text-center">
+          <div className="flex justify-center mb-6">
+            <IconTestPipe size={32} className="text-primary" stroke={1.5} />
+          </div>
           <h3 className="text-xl font-bold text-foreground mb-4">
             Clinically validated
           </h3>
@@ -25,6 +37,9 @@ export default function ForClinicsSection() {
           </p>
         </div>
         <div className="bg-card border border-border p-6 rounded-lg text-center">
+          <div className="flex justify-center mb-6">
+            <IconMicroscope size={32} className="text-primary" stroke={1.5} />
+          </div>
           <h3 className="text-xl font-bold text-foreground mb-4">
             Multiple studies
           </h3>
@@ -33,6 +48,9 @@ export default function ForClinicsSection() {
           </p>
         </div>
         <div className="bg-card border border-border p-6 rounded-lg text-center">
+          <div className="flex justify-center mb-6">
+            <IconRepeat size={32} className="text-primary" stroke={1.5} />
+          </div>
           <h3 className="text-xl font-bold text-foreground mb-4">
             Repeated testing
           </h3>
@@ -41,6 +59,9 @@ export default function ForClinicsSection() {
           </p>
         </div>
         <div className="bg-card border border-border p-6 rounded-lg text-center">
+          <div className="flex justify-center mb-6">
+            <IconEye size={32} className="text-primary" stroke={1.5} />
+          </div>
           <h3 className="text-xl font-bold text-foreground mb-4">
             Early detection
           </h3>
@@ -49,6 +70,9 @@ export default function ForClinicsSection() {
           </p>
         </div>
         <div className="bg-card border border-border p-6 rounded-lg text-center">
+          <div className="flex justify-center mb-6">
+            <IconMailFast size={32} className="text-primary" stroke={1.5} />
+          </div>
           <h3 className="text-xl font-bold text-foreground mb-4">
             Receive patient's results
           </h3>
@@ -57,6 +81,9 @@ export default function ForClinicsSection() {
           </p>
         </div>
         <div className="bg-card border border-border p-6 rounded-lg text-center">
+          <div className="flex justify-center mb-6">
+            <IconStethoscope size={32} className="text-primary" stroke={1.5} />
+          </div>
           <h3 className="text-xl font-bold text-foreground mb-4">
             Drive treatment
           </h3>

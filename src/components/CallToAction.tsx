@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { IconBrandAppleFilled } from "@tabler/icons-react";
+import { IconBrandAppleFilled, IconArrowRight } from "@tabler/icons-react";
 
 export default function CallToAction() {
   return (
@@ -21,18 +21,7 @@ export default function CallToAction() {
         >
           <IconBrandAppleFilled className="mr-2" size={24} />
           Download on iOS
-          <svg
-            className="ml-2 w-6 h-6"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fillRule="evenodd"
-              d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
-              clipRule="evenodd"
-            ></path>
-          </svg>
+          <IconArrowRight className="ml-2" size={24} aria-hidden="true" />
         </Link>
       </div>
     </section>
