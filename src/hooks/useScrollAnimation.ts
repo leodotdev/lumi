@@ -1,65 +1,72 @@
 "use client";
 
-import { useScroll, useTransform, useSpring, MotionValue } from "framer-motion";
+import { useScroll, useTransform, useSpring, MotionValue, useAnimation, useMotionValue } from "framer-motion";
 import { useRef, RefObject } from "react";
 
 interface ScrollAnimationProps {
   inputRange?: number[];
-  outputRange?: any[];
+  outputRange?: number[];
   clamp?: boolean;
   smooth?: boolean;
   smoothConfig?: {
-    damping?: number;
     stiffness?: number;
+    damping?: number;
     mass?: number;
   };
 }
 
-export function useScrollAnimation<T>({
+interface AnimationState {
+  enableAnimations: boolean;
+  prefersReducedMotion: boolean;
+}
+
+export function useScrollAnimation({
   inputRange = [0, 1],
   outputRange = [0, 1],
   clamp = true,
-  smooth = true,
-  smoothConfig = {
-    damping: 50,
-    stiffness: 400,
-    mass: 0.5,
-  },
-}: ScrollAnimationProps = {}): [RefObject<HTMLElement>, MotionValue<T>] {
+  smooth = false,
+  smoothConfig = { stiffness: 100, damping: 30 },
+}: ScrollAnimationProps = {}): [RefObject<HTMLElement | null>, MotionValue<number>] {
   const ref = useRef<HTMLElement>(null);
-  
-  // Track scroll progress through the element
+  const animationState = useAnimation() as unknown as AnimationState;
+
+  // Always calculate scroll progress, even if we won't use it
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"],
   });
 
-  // Transform the scroll progress to the output range
-  const transformedValue = useTransform(
+  // Always create the motion value, even if we won't use it
+  const progress = useTransform(
     scrollYProgress,
     inputRange,
     outputRange,
-    { clamp }
+    clamp ? { clamp: true } : undefined
   );
 
-  // Apply spring physics if smooth is enabled
-  const value = smooth
-    ? useSpring(transformedValue, {
-        damping: smoothConfig.damping,
-        stiffness: smoothConfig.stiffness,
-        mass: smoothConfig.mass,
-      })
-    : transformedValue;
+  // Create the spring value if needed
+  const smoothedProgress = useSpring(progress, smoothConfig);
 
-  return [ref, value as MotionValue<T>];
+  // If animations are disabled or user prefers reduced motion,
+  // return a static value
+  if (!animationState.enableAnimations || animationState.prefersReducedMotion) {
+    return [ref, useMotionValue(outputRange[0])];
+  }
+
+  // Apply smoothing if requested
+  if (smooth) {
+    return [ref, smoothedProgress];
+  }
+
+  return [ref, progress];
 }
 
 // Useful preset for parallax effects
 export function useParallax(
   factor: number = 0.3,
   clamp: boolean = true
-): [RefObject<HTMLElement>, MotionValue<number>] {
-  return useScrollAnimation<number>({
+): [RefObject<HTMLElement | null>, MotionValue<number>] {
+  return useScrollAnimation({
     inputRange: [0, 1],
     outputRange: [factor * 100, 0],
     clamp,
@@ -75,8 +82,8 @@ export function useParallax(
 export function useFadeEffect(
   threshold: number = 0.5,
   fadeRange: number = 0.3
-): [RefObject<HTMLElement>, MotionValue<number>] {
-  return useScrollAnimation<number>({
+): [RefObject<HTMLElement | null>, MotionValue<number>] {
+  return useScrollAnimation({
     inputRange: [
       threshold - fadeRange, // Start fading in
       threshold, // Fully visible

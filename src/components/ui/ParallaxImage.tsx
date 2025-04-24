@@ -28,12 +28,23 @@ export default function ParallaxImage({
   priority = false,
 }: ParallaxImageProps) {
   const ref = useRef<HTMLDivElement>(null);
-
-  // Get animation preferences from context
   const { enableAnimations, prefersReducedMotion } = useAnimation();
 
+  // Always calculate scroll progress, even if we won't use it
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+
+  const multiplier = direction === "down" ? -1 : 1;
+  const y = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [0, multiplier * intensity * 100]
+  );
+
   // If animations are disabled or user prefers reduced motion,
-  // we'll still render the image without parallax effect
+  // render the image without parallax effect
   if (!enableAnimations || prefersReducedMotion) {
     return (
       <div className={`relative overflow-hidden ${className}`}>
@@ -48,22 +59,6 @@ export default function ParallaxImage({
       </div>
     );
   }
-
-  // Calculate scroll progress
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
-  });
-
-  // Apply a y-transform based on scroll position
-  // For direction="up", the image moves up as user scrolls down
-  // For direction="down", the image moves down as user scrolls down
-  const multiplier = direction === "down" ? -1 : 1;
-  const y = useTransform(
-    scrollYProgress,
-    [0, 1],
-    [0, multiplier * intensity * 100]
-  );
 
   return (
     <div ref={ref} className={`relative overflow-hidden ${className}`}>
