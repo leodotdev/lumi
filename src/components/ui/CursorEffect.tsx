@@ -11,6 +11,7 @@ interface CursorEffectProps {
   particleCount?: number;
   zIndex?: number;
   containerId?: string;
+  fadeThreshold?: number;
 }
 
 export function CursorEffect({
@@ -22,6 +23,7 @@ export function CursorEffect({
   particleCount = 5,
   zIndex = 0,
   containerId,
+  fadeThreshold = 1,
 }: CursorEffectProps) {
   // Initialize with empty arrays and default values to avoid hydration mismatches
   const [particles, setParticles] = useState<
@@ -108,9 +110,14 @@ export function CursorEffect({
           const rect = container.getBoundingClientRect();
           const viewportBottom = window.innerHeight;
 
+          // Calculate what percentage of the container is visible
+          // fadeThreshold controls at what point the fade out completes:
+          // - fadeThreshold = 1: fade completes when container bottom reaches viewport bottom (default)
+          // - fadeThreshold = 0.5: fade completes when container is halfway out of viewport
+          // - fadeThreshold = 0.25: fade completes when container is 25% out of viewport
           const heroVisiblePercent = Math.max(
             0,
-            Math.min(1, rect.bottom / viewportBottom)
+            Math.min(1, rect.bottom / (viewportBottom * fadeThreshold))
           );
 
           setScrollOpacity(heroVisiblePercent);
@@ -169,7 +176,7 @@ export function CursorEffect({
         cancelAnimationFrame(rafRef.current);
       }
     };
-  }, [isClient, isVisible, containerId]);
+  }, [isClient, isVisible, containerId, fadeThreshold]);
 
   // Don't render anything on the server or before client-side hydration
   if (!isClient) {

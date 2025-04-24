@@ -2,6 +2,9 @@
 
 import { IconBrandLinkedinFilled } from "@tabler/icons-react";
 import Image from "next/image";
+import ScrollReveal from "./ui/ScrollReveal";
+import StaggeredReveal from "./ui/StaggeredReveal";
+import TextReveal from "./ui/TextReveal";
 
 interface TeamMember {
   name: string;
@@ -71,19 +74,34 @@ export default function AboutUsSection() {
   return (
     <div className="container mx-auto px-6 md:px-10 lg:px-16 vr-section bg-background">
       <div className="text-center vr-heading-spacing">
-        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-          About us
-        </h2>
-        <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-          Your pet&apos;s health is our top priority
-        </p>
+        <ScrollReveal>
+          <TextReveal
+            text="Aboutus"
+            as="h2"
+            className="text-3xl md:text-4xl font-bold text-foreground mb-4"
+            splitBy="words"
+          />
+        </ScrollReveal>
+
+        <ScrollReveal delay={0.2} direction="up">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+            Your pet's health is our top priority
+          </p>
+        </ScrollReveal>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 vr-grid">
+      <StaggeredReveal
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 vr-grid"
+        staggerAmount={0.05}
+        initialDelay={0.3}
+      >
         {teamMembers.map((member, index) => (
-          <div
+          <ScrollReveal
             key={index}
-            className="bg-card p-6 rounded-lg text-center vr-card-content"
+            delay={index * 0.05}
+            direction="up"
+            variant="scale"
+            className="bg-card border border-border p-6 rounded-lg text-center vr-card-content"
           >
             <div className="w-32 h-32 rounded-full mx-auto mb-4 overflow-hidden">
               <Image
@@ -111,9 +129,9 @@ export default function AboutUsSection() {
                 <IconBrandLinkedinFilled size={32} />
               </a>
             )}
-          </div>
+          </ScrollReveal>
         ))}
-      </div>
+      </StaggeredReveal>
     </div>
   );
 }

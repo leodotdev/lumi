@@ -16,7 +16,7 @@ export default function ForClinicsSection() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div className="bg-card p-6 rounded-lg text-center">
+        <div className="bg-card border border-border p-6 rounded-lg text-center">
           <h3 className="text-xl font-bold text-foreground mb-4">
             Clinically validated
           </h3>
@@ -24,7 +24,7 @@ export default function ForClinicsSection() {
             96% sensitivity &amp; 92% specificity in spiked samples.
           </p>
         </div>
-        <div className="bg-card p-6 rounded-lg text-center">
+        <div className="bg-card border border-border p-6 rounded-lg text-center">
           <h3 className="text-xl font-bold text-foreground mb-4">
             Multiple studies
           </h3>
@@ -32,7 +32,7 @@ export default function ForClinicsSection() {
             Partnered with the top GI veterinary lab in the country.
           </p>
         </div>
-        <div className="bg-card p-6 rounded-lg text-center">
+        <div className="bg-card border border-border p-6 rounded-lg text-center">
           <h3 className="text-xl font-bold text-foreground mb-4">
             Repeated testing
           </h3>
@@ -40,7 +40,7 @@ export default function ForClinicsSection() {
             Provides precision health for your pet and continuous monitoring.
           </p>
         </div>
-        <div className="bg-card p-6 rounded-lg text-center">
+        <div className="bg-card border border-border p-6 rounded-lg text-center">
           <h3 className="text-xl font-bold text-foreground mb-4">
             Early detection
           </h3>
@@ -48,7 +48,7 @@ export default function ForClinicsSection() {
             Pet owners catching health issues before its too late.
           </p>
         </div>
-        <div className="bg-card p-6 rounded-lg text-center">
+        <div className="bg-card border border-border p-6 rounded-lg text-center">
           <h3 className="text-xl font-bold text-foreground mb-4">
             Receive patient's results
           </h3>
@@ -56,7 +56,7 @@ export default function ForClinicsSection() {
             Real-time lab results sent to your clinic via email.
           </p>
         </div>
-        <div className="bg-card p-6 rounded-lg text-center">
+        <div className="bg-card border border-border p-6 rounded-lg text-center">
           <h3 className="text-xl font-bold text-foreground mb-4">
             Drive treatment
           </h3>

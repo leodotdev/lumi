@@ -5,10 +5,12 @@ import { useEffect, useState } from "react";
 
 interface ClientCursorEffectProps {
   containerId: string;
+  fadeThreshold?: number;
 }
 
 export default function ClientCursorEffect({
   containerId,
+  fadeThreshold = 0.5,
 }: ClientCursorEffectProps) {
   // Only render on client side after hydration is complete
   const [isMounted, setIsMounted] = useState(false);
@@ -44,6 +46,7 @@ export default function ClientCursorEffect({
       particleCount={isSafari ? 4 : 7}
       zIndex={1}
       containerId={containerId}
+      fadeThreshold={fadeThreshold}
     />
   );
 }

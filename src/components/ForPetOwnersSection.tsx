@@ -70,7 +70,7 @@ export default function ForPetOwnersSection() {
           </div>
         </div>
 
-        <div className="bg-card p-8 rounded-lg">
+        <div className="bg-card border border-border p-8 rounded-lg">
           <h3 className="text-2xl font-bold text-foreground mb-6">
             3 Easy Steps
           </h3>
