@@ -48,8 +48,8 @@ export default function Footer() {
 
       <footer className="w-full py-12 bg-background" role="contentinfo">
         <div className="container mx-auto px-6 md:px-10 lg:px-16">
-          <div className="flex flex-col md:flex-row justify-between items-center mb-8">
-            <div className="mb-6 md:mb-0">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-8">
+            <div className="flex flex-col gap-6">
               <Link
                 href="/"
                 className="flex items-center"
@@ -116,11 +116,11 @@ export default function Footer() {
             </nav>
           </div>
 
-          <div className="border-t border-border pt-8 text-center">
+          <div className="border-t border-border pt-8 text-center flex flex-col gap-2">
             <p className="text-muted-foreground">
               © {currentYear} Lumiinus. All rights reserved.
             </p>
-            <p className="text-muted-foreground mt-2">
+            <p className="text-muted-foreground">
               <span aria-label="Made in United States">Made in 🇺🇸</span>
             </p>
           </div>

@@ -63,9 +63,9 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="w-full mx-auto">
+    <div className="w-full mx-auto flex flex-col gap-6">
       {submitSuccess && (
-        <div className="mb-6 p-4 rounded-md bg-zinc-800 border border-zinc-700">
+        <div className="p-4 rounded-md bg-zinc-800 border border-zinc-700">
           <p className="text-primary font-medium">
             Thank you for your message! We'll be in touch soon.
           </p>
@@ -73,7 +73,7 @@ export default function ContactForm() {
       )}
 
       {submitError && (
-        <div className="mb-6 p-4 rounded-md bg-zinc-800 border border-zinc-700">
+        <div className="p-4 rounded-md bg-zinc-800 border border-zinc-700">
           <p className="text-destructive font-medium">{submitError}</p>
         </div>
       )}

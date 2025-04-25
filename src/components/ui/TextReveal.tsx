@@ -90,6 +90,11 @@ export default function TextReveal({
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
         variants={container}
+        style={{
+          display: "inline-flex",
+          flexWrap: "wrap",
+          gap: splitBy === "words" ? "0.25em" : 0,
+        }}
       >
         {items.map((textItem, index) => (
           <motion.span
@@ -99,10 +104,6 @@ export default function TextReveal({
             style={{
               display: splitBy === "words" ? "inline-block" : "inline",
               whiteSpace: splitBy === "characters" ? "pre" : "normal",
-              marginRight:
-                splitBy === "words" && index < items.length - 1
-                  ? "0.25em"
-                  : undefined,
             }}
           >
             {textItem}
